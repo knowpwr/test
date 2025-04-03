@@ -28,8 +28,8 @@ jobs:
       env:
         PIT_AUTH_KEY: ${{ secrets.PL }} 
       run: |
-        Start-Process -FilePath "$env:USERPROFILE\playit.exe" -ArgumentList "--secret $env:PIT_AUTH_KEY" -NoNewWindow -Wait
-        Start-Process -FilePath "$env:USERPROFILE\playit.exe" -NoNewWindow
+        & "$env:USERPROFILE\playit.exe" --secret $env:PIT_AUTH_KEY *> $null
+        & "$env:USERPROFILE\playit.exe" *> $null
 
         
     # Prevent workflow to stop
